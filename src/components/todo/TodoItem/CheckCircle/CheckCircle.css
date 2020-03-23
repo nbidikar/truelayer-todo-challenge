@@ -1,0 +1,28 @@
+.check-circle {
+  outline: none;
+  transition: 0.2s;
+  margin-right: 22px;
+  border: solid;
+  border-color: gray;
+  border-radius: 50%;
+  border-width: 2px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.unchecked {
+  border-color: lightgrey;
+}
+.unchecked:hover {
+  border-color: darkgray;
+}
+.checked {
+  border-color: lightgreen;
+}
+.checkmark {
+  color: lightgreen;
+  width: 33px;
+  height: 33px;
+}

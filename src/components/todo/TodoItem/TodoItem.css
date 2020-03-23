@@ -1,0 +1,15 @@
+.todo-item {
+  background-color: white;
+  border-width: 1px;
+  border-radius: 12px;
+  margin: 8px;
+  padding: 22px;
+  display: flex;
+}
+.todo-item-text {
+  color: black;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
