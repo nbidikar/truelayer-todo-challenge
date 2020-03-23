@@ -40,9 +40,9 @@ class TodoList extends Component {
 
   render() {
     return (
-      <div className="todo-list">
+      <div className="todo-container">
         <div className="todo-list-header">Todo List</div>
-        {this.renderTodos()}
+        <div className="todo-list">{this.renderTodos()}</div>
       </div>
     );
   }

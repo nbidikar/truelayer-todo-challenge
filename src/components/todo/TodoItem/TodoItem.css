@@ -1,16 +1,25 @@
 .todo-item {
+  transition: 0.15s;
   background-color: white;
-  border-width: 1px;
-  border-radius: 12px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
   margin: 8px;
   padding: 22px;
   display: flex;
 }
+.todo-item:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.18);
+}
 .todo-item-text {
+  transition: 0.1s;
   color: black;
   font-size: 22px;
   font-weight: regular;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.item-completed {
+  text-decoration: line-through;
+  color: lightgray;
 }

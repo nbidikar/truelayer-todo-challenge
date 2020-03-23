@@ -9,7 +9,9 @@ const TodoItem = props => {
   return (
     <div className="todo-item">
       <CheckCircle isChecked={isCompleted} onToggle={onToggleTodoCheck} />
-      <div className="todo-item-text">{description}</div>
+      <div className={"todo-item-text " + (isCompleted && "item-completed")}>
+        {description}
+      </div>
     </div>
   );
 };
