@@ -1,4 +1,17 @@
 body {
   background: white;
-  font-family: Verdana, Arial, Geneva, Arial Black;
+  font-family: "Lato";
+}
+@font-face {
+  font-family: "Lato";
+  src: url("assets/fonts/Lato-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("assets/fonts/Lato-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
 }

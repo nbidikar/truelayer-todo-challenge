@@ -41,7 +41,7 @@ class TodoList extends Component {
   render() {
     return (
       <div className="todo-list">
-        <h1 className="todo-list-header">Todo List</h1>
+        <div className="todo-list-header">Todo List</div>
         {this.renderTodos()}
       </div>
     );
