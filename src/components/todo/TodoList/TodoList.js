@@ -19,11 +19,15 @@ class TodoList extends PureComponent {
   }
 
   render() {
-    const { onCreateTodo } = this.props;
+    const { onCreateTodo, todos } = this.props;
     return (
       <div className="todo-list">
         <CreateTodo onCreateTodo={onCreateTodo} />
-        {this.renderTodos()}
+        {todos.length > 0 ? (
+          this.renderTodos()
+        ) : (
+          <div className="empty-todo-list">All todos completed!</div>
+        )}
       </div>
     );
   }

@@ -10,3 +10,10 @@
   justify-content: flex-start;
   overflow-y: scroll;
 }
+.empty-todo-list {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  color: rgb(185, 184, 184);
+  font-size: 30px;
+}
