@@ -8,15 +8,12 @@
   display: flex;
   align-items: center;
 }
+.remove-button {
+  display: none;
+}
 .todo-item:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.22);
 }
-/* .todo-item-text {
-  transition: 0.1s;
-  color: black;
-  font-size: 22px;
-  font-weight: regular;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
+.todo-item:hover .remove-button {
+  display: block;
+}

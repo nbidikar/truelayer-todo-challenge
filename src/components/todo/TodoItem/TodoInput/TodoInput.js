@@ -26,7 +26,6 @@ class TodoInput extends Component {
   handleKeyPress = e => {
     if (e.key === "Enter") {
       this.onSubmit();
-      this.inputRef.blur();
     }
   };
 
