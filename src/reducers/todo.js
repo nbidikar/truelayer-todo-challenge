@@ -1,5 +1,6 @@
-import * as types from "../actions/types";
 import { v4 as uuid } from "uuid";
+import { REHYDRATE } from "redux-persist/lib/constants";
+import * as types from "../actions/types";
 
 const initialState = {
   todos: [
@@ -14,6 +15,16 @@ const initialState = {
 
 const todo = (state = initialState, action) => {
   switch (action.type) {
+    case REHYDRATE: {
+      if (action.payload && action.payload.todos) {
+        return {
+          ...state,
+          todos: action.payload.todos
+        };
+      } else {
+        return state;
+      }
+    }
     case types.TODO.CREATE_TODO: {
       const newTodo = {
         id: uuid(),
