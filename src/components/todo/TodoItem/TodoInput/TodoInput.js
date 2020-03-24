@@ -24,14 +24,17 @@ class TodoInput extends Component {
   };
 
   handleKeyPress = e => {
+    if (e.key === "Enter") {
+      this.onSubmit();
+      this.inputRef.blur();
+    }
+  };
+
+  onSubmit = () => {
     const { onSubmit, value } = this.props;
     const { inputValue } = this.state;
-
-    if (e.key === "Enter") {
-      if (value !== inputValue) {
-        onSubmit(inputValue);
-      }
-      this.inputRef.blur();
+    if (value !== inputValue) {
+      onSubmit(inputValue);
     }
   };
 
@@ -49,6 +52,7 @@ class TodoInput extends Component {
         type="text"
         onChange={this.updateInputValue}
         onKeyPress={this.handleKeyPress}
+        onBlur={this.onSubmit}
       />
     );
   }
