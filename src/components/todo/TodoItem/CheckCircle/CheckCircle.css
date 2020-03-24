@@ -6,8 +6,8 @@
   border-color: gray;
   border-radius: 50%;
   border-width: 2px;
-  width: 44px;
-  height: 44px;
+  width: 34px;
+  height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,13 +16,18 @@
   border-color: lightgrey;
 }
 .unchecked:hover {
-  border-color: darkgray;
+  border-color: #47d7ac;
 }
 .checked {
-  border-color: lightgreen;
+  border-color: #47d7ac;
+  background-color: #47d7ac;
+}
+.checked:hover {
+  border-color: #6e978c;
+  background-color: #6e978c;
 }
 .checkmark {
-  color: lightgreen;
-  width: 33px;
-  height: 33px;
+  color: white;
+  width: 30px;
+  height: 30px;
 }

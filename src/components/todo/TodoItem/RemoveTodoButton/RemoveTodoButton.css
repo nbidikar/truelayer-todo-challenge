@@ -1,0 +1,16 @@
+.action-button {
+  outline: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  margin-left: 11px;
+}
+.action-icon {
+  transition: 0.3s;
+  width: 36px;
+  height: 36px;
+  color: #d0021b;
+}
+.action-icon:hover {
+  color: #ff001e;
+}

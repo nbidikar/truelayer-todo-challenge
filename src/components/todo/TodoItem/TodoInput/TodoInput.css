@@ -1,0 +1,24 @@
+.todo-input {
+  display: flex;
+  flex-grow: 1;
+  outline: none;
+  background-color: white;
+  border: 1px solid white;
+  transition: 0.15s;
+  color: black;
+  font-size: 22px;
+  font-weight: regular;
+  padding: 8px;
+}
+.todo-input:hover {
+  transition-delay: 0.1s;
+  border: 1px solid #e9e6e6;
+}
+.todo-input:focus {
+  transition-delay: 0s;
+  border: 1px solid white;
+}
+.item-completed {
+  text-decoration: line-through;
+  color: lightgray;
+}

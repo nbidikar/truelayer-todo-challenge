@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./TodoList.css";
 import TodoItem from "../TodoItem/TodoItem";
+import TodoInput from "../TodoItem/TodoInput/TodoInput";
 
 class TodoList extends Component {
   constructor(props) {
@@ -24,18 +25,41 @@ class TodoList extends Component {
     });
   };
 
+  removeTodo = id => {
+    const { todos } = this.state;
+
+    const updatedTodos = todos.filter(todo => todo.id !== id);
+
+    this.setState({
+      todos: updatedTodos
+    });
+  };
+
+  editTodo = (id, updatedDescription) => {
+    const { todos } = this.state;
+    const index = todos.findIndex(todo => todo.id === id);
+
+    todos[index].description = updatedDescription;
+
+    this.setState({
+      todos
+    });
+  };
+
   renderTodos = () => {
     const { todos } = this.state;
 
-    const items = todos.map(todo => (
+    return todos.map(todo => (
       <TodoItem
         id={todo.id}
         todo={todo}
         onToggleTodoCheck={() => this.toggleTodoCheck(todo.id)}
+        onRemoveTodo={() => this.removeTodo(todo.id)}
+        onEditTodo={updatedDescription =>
+          this.editTodo(todo.id, updatedDescription)
+        }
       />
     ));
-
-    return items;
   };
 
   render() {

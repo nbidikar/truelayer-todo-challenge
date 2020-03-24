@@ -1,5 +1,5 @@
 import React from "react";
-import { IoMdCheckmark } from "react-icons/io";
+import { FaCheck } from "react-icons/fa";
 import "./CheckCircle.css";
 
 const CheckCircle = props => {
@@ -10,7 +10,7 @@ const CheckCircle = props => {
       className={"check-circle " + (isChecked ? "checked" : "unchecked")}
       onClick={onToggle}
     >
-      {isChecked && <IoMdCheckmark className="checkmark" />}
+      {isChecked && <FaCheck className="checkmark" />}
     </button>
   );
 };
