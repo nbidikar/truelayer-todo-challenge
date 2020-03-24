@@ -19,6 +19,14 @@ class TodoInput extends Component {
     });
   }
 
+  onKeyPress = e => {
+    if (e.key === "Enter") {
+      if (this.state.inputValue === "") {
+        this.props.onRemove();
+      }
+    }
+  };
+
   updateInputValue = e => {
     this.setState({ inputValue: e.target.value });
   };
@@ -46,6 +54,7 @@ class TodoInput extends Component {
         onChange={this.updateInputValue}
         onBlur={this.onSubmit}
         placeholder="Remove Todo?"
+        onKeyPress={this.onKeyPress}
       />
     );
   }
