@@ -1,0 +1,6 @@
+export const TODO = {
+  CREATE_TODO: "todo/CREATE_TODO",
+  UPDATE_TODO: "todo/UPDATE_TODO",
+  REMOVE_TODO: "todo/REMOVE_TODO",
+  TOGGLE_COMPLETE: "todo/TOGGLE_COMPLETE"
+};
