@@ -16,7 +16,7 @@
 }
 .todo-input:focus {
   transition-delay: 0s;
-  border: 1px solid white;
+  border: 1px solid #e9e6e6;
 }
 .todo-input::placeholder {
   color: #d0021b;
