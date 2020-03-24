@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import "./TodoList.css";
 import TodoItem from "../TodoItem/TodoItem";
+import CreateTodo from "../CreateTodo/CreateTodo";
 
 class TodoList extends PureComponent {
   renderTodos() {
@@ -18,7 +19,13 @@ class TodoList extends PureComponent {
   }
 
   render() {
-    return <div className="todo-list">{this.renderTodos()}</div>;
+    const { onCreateTodo } = this.props;
+    return (
+      <div className="todo-list">
+        <CreateTodo onCreateTodo={onCreateTodo} />
+        {this.renderTodos()}
+      </div>
+    );
   }
 }
 

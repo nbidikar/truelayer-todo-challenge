@@ -8,7 +8,7 @@ const CheckCircle = props => {
   return (
     <button
       className={"check-circle " + (isChecked ? "checked" : "unchecked")}
-      onClick={() => onToggle()}
+      onClick={onToggle}
     >
       {isChecked && <FaCheck className="checkmark" />}
     </button>

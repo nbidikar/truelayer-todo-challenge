@@ -23,12 +23,6 @@ class TodoInput extends Component {
     this.setState({ inputValue: e.target.value });
   };
 
-  handleKeyPress = e => {
-    if (e.key === "Enter") {
-      this.onSubmit();
-    }
-  };
-
   onSubmit = () => {
     const { onSubmit, value } = this.props;
     const { inputValue } = this.state;
@@ -50,8 +44,8 @@ class TodoInput extends Component {
         value={inputValue}
         type="text"
         onChange={this.updateInputValue}
-        onKeyPress={this.handleKeyPress}
         onBlur={this.onSubmit}
+        placeholder="Remove Todo?"
       />
     );
   }

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { v4 as uuid } from "uuid";
 import "./TodoTool.css";
 import TodoList from "../TodoList/TodoList";
 
@@ -19,9 +20,7 @@ class TodoTool extends Component {
   }
 
   toggleTodoCheck = id => {
-    const { todos } = this.state;
-
-    const updatedTodos = [...todos];
+    const updatedTodos = [...this.state.todos];
 
     const index = updatedTodos.findIndex(todo => todo.id === id);
 
@@ -32,16 +31,14 @@ class TodoTool extends Component {
   };
 
   removeTodo = id => {
-    const { todos } = this.state;
     this.setState({
-      todos: todos.filter(todo => todo.id !== id)
+      todos: this.state.todos.filter(todo => todo.id !== id)
     });
   };
 
   editTodo = (id, updatedDescription) => {
     if (updatedDescription !== "") {
-      const { todos } = this.state;
-      const updatedTodos = [...todos];
+      const updatedTodos = [...this.state.todos];
 
       const index = updatedTodos.findIndex(todo => todo.id === id);
 
@@ -55,6 +52,22 @@ class TodoTool extends Component {
     }
   };
 
+  createTodo = todoDescription => {
+    const newTodo = {
+      id: uuid(),
+      description: todoDescription,
+      isCompleted: false
+    };
+
+    const todos = [...this.state.todos];
+
+    todos.unshift(newTodo);
+
+    this.setState({
+      todos
+    });
+  };
+
   render() {
     const { todos } = this.state;
     return (
@@ -65,6 +78,7 @@ class TodoTool extends Component {
           onToggleTodoCheck={this.toggleTodoCheck}
           onRemove={this.removeTodo}
           onEdit={this.editTodo}
+          onCreateTodo={this.createTodo}
         />
       </div>
     );

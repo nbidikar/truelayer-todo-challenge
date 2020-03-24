@@ -18,6 +18,10 @@
   transition-delay: 0s;
   border: 1px solid white;
 }
+.todo-input::placeholder {
+  color: #d0021b;
+  opacity: 0.4;
+}
 .item-completed {
   text-decoration: line-through;
   color: lightgray;
