@@ -1,3 +1,4 @@
 import { TodoActions } from "./todo";
+import { RecorderActions } from "./recorder";
 
-export default { ...TodoActions };
+export default { ...TodoActions, ...RecorderActions };

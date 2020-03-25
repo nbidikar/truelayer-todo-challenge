@@ -3,14 +3,7 @@ import { REHYDRATE } from "redux-persist/lib/constants";
 import * as types from "../actions/types";
 
 const initialState = {
-  todos: [
-    { id: "123", description: "Walk the dog", isCompleted: true },
-    { id: "456", description: "Do taxes", isCompleted: false },
-    { id: "789", description: "Cut hair", isCompleted: true },
-    { id: "101112", description: "Clean dishes", isCompleted: false },
-    { id: "131415", description: "Tidy desk", isCompleted: false },
-    { id: "161718", description: "Take out trash", isCompleted: false }
-  ]
+  todos: []
 };
 
 const todo = (state = initialState, action) => {
@@ -28,6 +21,7 @@ const todo = (state = initialState, action) => {
     case types.TODO.CREATE_TODO: {
       const newTodo = {
         id: uuid(),
+        creationDate: Date.now(),
         description: action.payload,
         isCompleted: false
       };

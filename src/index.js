@@ -11,6 +11,7 @@ import "./app.global.css";
 import Root from "./components/Root";
 
 import rootReducer from "./reducers";
+import middlewares from "./actions/middleware";
 
 const persistConfig = {
   key: "root",
@@ -20,7 +21,7 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-const store = createStore(persistedReducer);
+const store = createStore(persistedReducer, middlewares);
 
 const persistor = persistStore(store);
 
