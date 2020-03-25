@@ -63,7 +63,8 @@ const recorder = (state = initialState, action) => {
     case types.RECORDER.PLAY_RECORDING: {
       return {
         ...state,
-        isPlayingRecording: true
+        isPlayingRecording: true,
+        recordingStep: 0
       };
     }
     case types.RECORDER.PLAY_NEXT_ACTION: {
