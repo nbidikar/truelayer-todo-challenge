@@ -17,7 +17,8 @@ const mapStateToProps = state => {
 
   return {
     todos: todos,
-    isPlayingRecording: state.recorder.isPlayingRecording
+    isPlayingRecording: state.recorder.isPlayingRecording,
+    isRecording: state.recorder.isRecording
   };
 };
 

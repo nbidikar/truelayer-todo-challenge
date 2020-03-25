@@ -14,7 +14,7 @@ const rootPersistConfig = {
 const recorderPersistConfig = {
   key: "recorder",
   storage: storage,
-  whitelist: ["recording"]
+  whitelist: ["recording", "recordingTimestamp"]
 };
 
 const rootReducer = combineReducers({

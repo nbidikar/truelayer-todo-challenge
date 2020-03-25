@@ -8,7 +8,8 @@ import RecorderTool from "../components/recorder/RecorderTool/RecorderTool";
 const mapStateToProps = state => ({
   isRecording: state.recorder.isRecording,
   recordingAvailable:
-    state.recorder.recording.length > 0 && !state.recorder.isRecording
+    state.recorder.recording.length > 0 && !state.recorder.isRecording,
+  recordingTimestamp: state.recorder.recordingTimestamp
 });
 
 const RecorderToolContainer = props => <RecorderTool {...props} />;

@@ -1,8 +1,10 @@
+import moment from "moment";
 import { REHYDRATE } from "redux-persist/lib/constants";
 import * as types from "../actions/types";
 
 const initialState = {
   recording: [],
+  recordingTimestamp: "",
   recordingStep: 0,
   isRecording: false,
   isPlayingRecording: false
@@ -11,10 +13,15 @@ const initialState = {
 const recorder = (state = initialState, action) => {
   switch (action.type) {
     case REHYDRATE: {
-      if (action.payload && action.payload.recording) {
+      if (
+        action.payload &&
+        action.payload.recording &&
+        action.payload.recordingTimestamp
+      ) {
         return {
           ...state,
-          recording: action.payload.recording
+          recording: action.payload.recording,
+          recordingTimestamp: action.payload.recordingTimestamp
         };
       } else {
         return state;
@@ -28,9 +35,12 @@ const recorder = (state = initialState, action) => {
       };
     }
     case types.RECORDER.STOP_RECORDING: {
+      const timestamp = moment().format("MMMM Do YYYY [at] HH:mm");
+
       return {
         ...state,
-        isRecording: false
+        isRecording: false,
+        recordingTimestamp: timestamp
       };
     }
     case types.RECORDER.RECORD_ACTION: {
@@ -46,7 +56,8 @@ const recorder = (state = initialState, action) => {
     case types.RECORDER.CLEAR_RECORDING: {
       return {
         ...state,
-        recording: []
+        recording: [],
+        recordingTimestamp: null
       };
     }
     case types.RECORDER.PLAY_RECORDING: {

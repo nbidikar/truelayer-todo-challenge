@@ -10,7 +10,8 @@ const TodoTool = props => {
     removeTodo,
     updateTodo,
     createTodo,
-    isPlayingRecording
+    isPlayingRecording,
+    isRecording
   } = props;
 
   return (
@@ -24,6 +25,7 @@ const TodoTool = props => {
         onEdit={updateTodo}
         onCreateTodo={createTodo}
         isPlayingRecording={isPlayingRecording}
+        isRecording={isRecording}
       />
     </div>
   );

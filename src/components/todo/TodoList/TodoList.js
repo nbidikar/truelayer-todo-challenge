@@ -19,13 +19,19 @@ class TodoList extends PureComponent {
   }
 
   render() {
-    const { onCreateTodo, todos, isPlayingRecording } = this.props;
+    const { onCreateTodo, todos, isPlayingRecording, isRecording } = this.props;
+
+    let listDisplay = "todo-list";
+
+    if (isPlayingRecording) {
+      listDisplay += " todo-list-playing-recording";
+    }
+    if (isRecording) {
+      listDisplay += " todo-list-is-recording";
+    }
+
     return (
-      <div
-        className={
-          "todo-list " + (isPlayingRecording && "todo-list-playing-recording")
-        }
-      >
+      <div className={listDisplay}>
         <CreateTodo onCreateTodo={onCreateTodo} />
         {todos.length > 0 ? (
           this.renderTodos()
