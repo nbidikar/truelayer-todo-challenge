@@ -1,9 +1,25 @@
 import { combineReducers } from "redux";
+import storage from "redux-persist/lib/storage";
+import { persistReducer } from "redux-persist";
 
 import todo from "./todo";
 import recorder from "./recorder";
 
-export default combineReducers({
+const rootPersistConfig = {
+  key: "root",
+  storage,
+  whitelist: ["todo"]
+};
+
+const recorderPersistConfig = {
+  key: "recorder",
+  storage: storage,
+  whitelist: ["recording"]
+};
+
+const rootReducer = combineReducers({
   todo,
-  recorder
+  recorder: persistReducer(recorderPersistConfig, recorder)
 });
+
+export default persistReducer(rootPersistConfig, rootReducer);

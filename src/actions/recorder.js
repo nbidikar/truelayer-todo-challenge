@@ -18,8 +18,15 @@ function playRecording() {
   };
 }
 
+function clearRecording() {
+  return {
+    type: types.RECORDER.CLEAR_RECORDING
+  };
+}
+
 export const RecorderActions = {
   startRecording,
   stopRecording,
-  playRecording
+  playRecording,
+  clearRecording
 };

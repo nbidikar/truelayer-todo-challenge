@@ -13,7 +13,7 @@ const recorder = (state = initialState, action) => {
     case REHYDRATE: {
       if (action.payload && action.payload.recording) {
         return {
-          state,
+          ...state,
           recording: action.payload.recording
         };
       } else {
@@ -41,6 +41,12 @@ const recorder = (state = initialState, action) => {
       return {
         ...state,
         recording
+      };
+    }
+    case types.RECORDER.CLEAR_RECORDING: {
+      return {
+        ...state,
+        recording: []
       };
     }
     case types.RECORDER.PLAY_RECORDING: {

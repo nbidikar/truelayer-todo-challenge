@@ -2,12 +2,14 @@ import React from "react";
 import "./RecorderTool.css";
 
 import { FaSquare, FaCircle, FaPlay } from "react-icons/fa";
+import { TiDeleteOutline } from "react-icons/ti";
 
 const RecorderTool = props => {
   const {
     startRecording,
     stopRecording,
     playRecording,
+    clearRecording,
     isRecording,
     recordingAvailable
   } = props;
@@ -32,8 +34,13 @@ const RecorderTool = props => {
       </div>
 
       {recordingAvailable && (
-        <div className="recorder-button" onClick={playRecording}>
-          <FaPlay size={27} color="green" />
+        <div className="recorder-actions">
+          <div className="recorder-button" onClick={playRecording}>
+            <FaPlay size={27} color="green" />
+          </div>
+          <div className="recorder-button" onClick={clearRecording}>
+            <TiDeleteOutline size={33} color="gray" />
+          </div>
         </div>
       )}
       {isRecording && <div className="is-recording-prompt">RECORDING</div>}
