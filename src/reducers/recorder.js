@@ -3,7 +3,7 @@ import * as types from "../actions/types";
 
 const initialState = {
   recording: [],
-  recordingStep: {},
+  recordingStep: 0,
   isRecording: false,
   isPlayingRecording: false
 };
@@ -23,6 +23,7 @@ const recorder = (state = initialState, action) => {
     case types.RECORDER.START_RECORDING: {
       return {
         ...state,
+        recording: [],
         isRecording: true
       };
     }
@@ -35,12 +36,34 @@ const recorder = (state = initialState, action) => {
     case types.RECORDER.RECORD_ACTION: {
       const recording = [...state.recording];
 
-      recording.push(action.payload);
+      recording.push(action.payload.recordedAction);
 
       return {
         ...state,
         recording
       };
+    }
+    case types.RECORDER.PLAY_RECORDING: {
+      return {
+        ...state,
+        isPlayingRecording: true
+      };
+    }
+    case types.RECORDER.PLAY_NEXT_ACTION: {
+      const { recordingStep, recording } = state;
+
+      if (recordingStep < recording.length - 1) {
+        return {
+          ...state,
+          recordingStep: recordingStep + 1
+        };
+      } else {
+        return {
+          ...state,
+          recordingStep: 0,
+          isPlayingRecording: false
+        };
+      }
     }
     default:
       return state;

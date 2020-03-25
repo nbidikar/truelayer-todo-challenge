@@ -19,6 +19,14 @@ class TodoInput extends Component {
     });
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.value !== this.props.value) {
+      this.setState({
+        inputValue: this.props.value
+      });
+    }
+  }
+
   onKeyPress = e => {
     if (e.key === "Enter") {
       if (this.state.inputValue === "") {

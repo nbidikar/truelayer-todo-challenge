@@ -6,9 +6,20 @@ import ActionCreators from "../actions";
 
 import TodoTool from "../components/todo/TodoTool/TodoTool";
 
-const mapStateToProps = state => ({
-  todos: state.todo.todos
-});
+const mapStateToProps = state => {
+  let todos = state.todo.todos;
+
+  if (state.recorder.isPlayingRecording) {
+    todos = [
+      ...state.recorder.recording[state.recorder.recordingStep].currentState
+    ];
+  }
+
+  return {
+    todos: todos,
+    isPlayingRecording: state.recorder.isPlayingRecording
+  };
+};
 
 const TodoToolContainer = props => <TodoTool {...props} />;
 

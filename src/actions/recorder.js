@@ -12,7 +12,14 @@ function stopRecording() {
   };
 }
 
+function playRecording() {
+  return {
+    type: types.RECORDER.PLAY_RECORDING
+  };
+}
+
 export const RecorderActions = {
   startRecording,
-  stopRecording
+  stopRecording,
+  playRecording
 };
