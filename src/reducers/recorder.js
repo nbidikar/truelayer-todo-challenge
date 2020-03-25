@@ -35,13 +35,23 @@ const recorder = (state = initialState, action) => {
       };
     }
     case types.RECORDER.STOP_RECORDING: {
-      const timestamp = moment().format("MMMM Do YYYY [at] HH:mm");
+      if (
+        state.recording.every(record => record.action.includes("recorder/"))
+      ) {
+        return {
+          ...state,
+          isRecording: false,
+          recording: []
+        };
+      } else {
+        const timestamp = moment().format("MMMM Do YYYY [at] HH:mm");
 
-      return {
-        ...state,
-        isRecording: false,
-        recordingTimestamp: timestamp
-      };
+        return {
+          ...state,
+          isRecording: false,
+          recordingTimestamp: timestamp
+        };
+      }
     }
     case types.RECORDER.RECORD_ACTION: {
       const recording = [...state.recording];
