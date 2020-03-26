@@ -7,8 +7,20 @@ const initialState = {
   recordingTimestamp: "",
   recordingStep: 0,
   isRecording: false,
-  isPlayingRecording: false
+  isPlayingRecording: false,
+  playRecordingTimeElapsed: 0
 };
+
+function getTimeElapsedInMinutes(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  let secondsRemainder = seconds - minutes * 60;
+
+  if (secondsRemainder < 10) {
+    secondsRemainder = "0" + secondsRemainder.toString();
+  }
+
+  return `${minutes}:${secondsRemainder}`;
+}
 
 const recorder = (state = initialState, action) => {
   switch (action.type) {
@@ -71,25 +83,34 @@ const recorder = (state = initialState, action) => {
       };
     }
     case types.RECORDER.PLAY_RECORDING: {
+      const timeElapsed = getTimeElapsedInMinutes(state.recording.length - 1);
+
       return {
         ...state,
         isPlayingRecording: true,
-        recordingStep: 0
+        recordingStep: 0,
+        playRecordingTimeElapsed: timeElapsed
       };
     }
     case types.RECORDER.PLAY_NEXT_ACTION: {
       const { recordingStep, recording } = state;
 
       if (recordingStep < recording.length - 1) {
+        const timeElapsed = getTimeElapsedInMinutes(
+          recording.length - recordingStep - 2
+        );
+
         return {
           ...state,
-          recordingStep: recordingStep + 1
+          recordingStep: recordingStep + 1,
+          playRecordingTimeElapsed: timeElapsed
         };
       } else {
         return {
           ...state,
           recordingStep: 0,
-          isPlayingRecording: false
+          isPlayingRecording: false,
+          playRecordingTimeElapsed: 0
         };
       }
     }

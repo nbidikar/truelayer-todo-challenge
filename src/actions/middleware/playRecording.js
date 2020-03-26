@@ -10,12 +10,13 @@ export const playRecording = store => next => action => {
       });
     }, 1000);
   }
+
+  next(action);
+
   if (
     action.type === types.RECORDER.PLAY_NEXT_ACTION &&
     !store.getState().recorder.isPlayingRecording
   ) {
     clearInterval(recordingTimer);
   }
-
-  next(action);
 };

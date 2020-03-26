@@ -1,0 +1,19 @@
+.recorder-player-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.recording-timestamp {
+  margin-left: 11px;
+  margin-right: 3px;
+  color: black;
+  font-size: 20px;
+}
+.clear-btn {
+  margin-left: auto;
+}
+.recording-time-elapsed {
+  color: green;
+  font-size: 20px;
+  margin-right: 11px;
+}

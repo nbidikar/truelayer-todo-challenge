@@ -3,54 +3,6 @@
   width: 100%;
   border: 1px solid #ececec;
   border-radius: 30px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px;
-  margin-bottom: 7px;
-}
-.recorder-actions {
-  display: flex;
-  align-items: center;
-}
-.recorder-actions-left {
-  margin-left: 11px;
-}
-.recorder-actions-right {
-  margin-left: auto;
-}
-.recorder-button {
-  outline: none;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 3px 5px 3px 5px;
-}
-.record-icon {
-  transition: 0.2s;
-  color: #d0021b;
-}
-.record-icon:hover {
-  color: red;
-}
-.stop-icon {
-  transition: 0.2s;
-  color: rgb(39, 39, 39);
-}
-.stop-icon:hover {
-  color: black;
-}
-.is-recording-prompt {
-  color: #d0021b;
-  font-size: 22px;
-  margin-right: auto;
-  margin-left: 22px;
-}
-.recording-timestamp {
-  margin-left: 11px;
-  margin-right: 3px;
-  color: black;
-  font-size: 20px;
+  padding: 9px;
+  margin-bottom: 16px;
 }

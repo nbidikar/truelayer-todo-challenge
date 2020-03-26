@@ -1,0 +1,24 @@
+.record-icon {
+  outline: none;
+  border: none;
+  transition: 0.2s;
+  background-color: #d0021b;
+  margin: 5px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.record-icon:hover {
+  color: red;
+}
+.record-icon-is-recording {
+  animation: shadow-pulse 1s infinite;
+}
+@keyframes shadow-pulse {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+}

@@ -9,7 +9,9 @@ const mapStateToProps = state => ({
   isRecording: state.recorder.isRecording,
   recordingAvailable:
     state.recorder.recording.length > 1 && !state.recorder.isRecording,
-  recordingTimestamp: state.recorder.recordingTimestamp
+  recordingTimestamp: state.recorder.recordingTimestamp,
+  isPlayingRecording: state.recorder.isPlayingRecording,
+  playRecordingTimeElapsed: state.recorder.playRecordingTimeElapsed
 });
 
 const RecorderToolContainer = props => <RecorderTool {...props} />;
