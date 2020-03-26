@@ -1,8 +1,6 @@
 import * as types from "../types";
 
 export const actionRecorder = store => next => action => {
-  let result = next(action);
-
   if (
     (store.getState().recorder.isRecording && action.type.includes("todo/")) ||
     action.type === types.RECORDER.START_RECORDING ||
@@ -23,5 +21,5 @@ export const actionRecorder = store => next => action => {
     });
   }
 
-  return result;
+  next(action);
 };

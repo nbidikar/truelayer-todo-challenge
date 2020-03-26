@@ -49,15 +49,14 @@ class TodoInput extends Component {
   };
 
   onSubmit = () => {
-    const { onSubmit, onRemove, value } = this.props;
+    const { onSubmit, value } = this.props;
     const { inputValue } = this.state;
 
-    if (inputValue === "") {
-      onRemove();
-    } else if (value !== inputValue) {
+    if (value !== inputValue) {
       onSubmit(inputValue);
-      this.inputRef.blur();
     }
+
+    this.inputRef.blur();
   };
 
   render() {

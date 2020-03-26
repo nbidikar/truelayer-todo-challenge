@@ -24,7 +24,10 @@ function updateTodo(id, updatedDescription) {
       }
     };
   } else {
-    removeTodo(id);
+    return {
+      type: types.TODO.REMOVE_TODO,
+      payload: id
+    };
   }
 }
 

@@ -14,7 +14,6 @@ const TodoItem = props => {
         value={description}
         isCompleted={isCompleted}
         onSubmit={onEditTodo}
-        onRemove={onRemoveTodo}
       />
       <div className="remove-button">
         <RemoveTodoButton onRemove={onRemoveTodo} />
