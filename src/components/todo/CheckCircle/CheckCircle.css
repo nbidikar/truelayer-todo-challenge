@@ -1,14 +1,13 @@
 .check-circle {
   outline: none;
   transition: 0.2s;
-  margin-right: 18px;
-  margin-left: 3px;
+  margin-right: 0px 0px 0px 8px;
   border: solid;
   border-color: gray;
   border-radius: 50%;
-  border-width: 2px;
-  width: 34px;
-  height: 34px;
+  border-width: 1px;
+  width: 22px;
+  height: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,8 +26,9 @@
   border-color: #6e978c;
   background-color: #6e978c;
 }
-.checkmark {
+.checkmark-completed {
   color: white;
-  width: 30px;
-  height: 30px;
+}
+.checkmark-open {
+  color: rgb(180, 180, 180);
 }

@@ -36,7 +36,7 @@ class CreateTodo extends React.Component {
     return (
       <div className="create-todo-container">
         <button className="create-button" onClick={this.onCreateTodo}>
-          <IoMdAdd className="create-icon" />
+          <IoMdAdd className="create-icon" size={30} />
         </button>
         <input
           value={this.state.inputValue}

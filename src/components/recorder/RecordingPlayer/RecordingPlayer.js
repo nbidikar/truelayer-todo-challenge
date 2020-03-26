@@ -20,7 +20,7 @@ const RecordingPlayer = props => {
         disabled={isPlayingRecording}
       />
       <div className="recording-timestamp">{recordingTimestamp}</div>
-      <div className="clear-btn">
+      <div className="left-display">
         {isPlayingRecording ? (
           <div className="recording-time-elapsed">
             {playRecordingTimeElapsed}

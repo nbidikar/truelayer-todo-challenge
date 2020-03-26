@@ -11,7 +11,7 @@ const PlayerRecordingButton = props => {
       disabled={props.disabled}
     >
       <FaPlay
-        size={30}
+        size={23}
         className={props.disabled ? "play-icon-disabled" : "play-icon"}
       />
     </button>

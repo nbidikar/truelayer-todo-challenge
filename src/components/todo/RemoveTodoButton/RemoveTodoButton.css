@@ -1,17 +1,17 @@
 .action-button {
+  background-color: white;
   outline: none;
   border: none;
-  width: 40px;
-  height: 40px;
-  margin-left: 5px;
-  margin-right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.action-icon {
+.remove-action {
   transition: 0.3s;
-  width: 36px;
-  height: 36px;
+  width: 26px;
+  height: 26px;
   color: #d0021b;
 }
-.action-icon:hover {
+.remove-action:hover {
   color: #ff001e;
 }

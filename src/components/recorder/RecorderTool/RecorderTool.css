@@ -1,8 +1,10 @@
 .recorder-tool-container {
   box-sizing: border-box;
+  width: auto;
+  height: 44px;
   width: 100%;
   border: 1px solid #ececec;
   border-radius: 30px;
-  padding: 9px;
+  padding: 6px;
   margin-bottom: 16px;
 }

@@ -5,9 +5,7 @@
   align-items: center;
   justify-content: center;
   padding: 0;
-  margin: 5px;
-  width: 36px;
-  height: 36px;
+  margin: 5px 5px 5px 6px;
 }
 .play-icon {
   color: green;

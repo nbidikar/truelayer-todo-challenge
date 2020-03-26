@@ -4,7 +4,7 @@
   "description": "TrueLayer Todo Challenge",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
+    "start": "webpack-dev-server --mode development --open --hot --port 3000 --host 192.168.1.29",
     "build": "webpack --mode production"
   },
   "author": "Niti Bidikar",

@@ -4,8 +4,9 @@
   align-items: center;
 }
 .recorder-prompt {
-  font-size: 22px;
-  margin-left: 18px;
+  transition: 0.3s;
+  margin-left: 11px;
+  font-size: 16px;
 }
 .recorder-prompt-recording {
   color: red;
