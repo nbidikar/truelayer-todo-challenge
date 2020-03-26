@@ -24,7 +24,6 @@
 }
 .checked:hover {
   border-color: #6e978c;
-  background-color: #6e978c;
 }
 .checkmark-completed {
   color: white;

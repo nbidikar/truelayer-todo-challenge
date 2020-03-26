@@ -1,4 +1,4 @@
-.todo-list {
+.todo-list-container {
   transition: 0.3s;
   height: 100%;
   width: 100%;
@@ -9,8 +9,15 @@
   align-self: center;
   display: flex;
   flex-direction: column;
+}
+.list-items {
+  display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   overflow-y: scroll;
+}
+.list-items::-webkit-scrollbar {
+  display: none;
 }
 .todo-list-playing-recording {
   pointer-events: none;

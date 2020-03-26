@@ -21,7 +21,7 @@ class TodoList extends PureComponent {
   render() {
     const { onCreateTodo, todos, isPlayingRecording, isRecording } = this.props;
 
-    let listDisplay = "todo-list";
+    let listDisplay = "todo-list-container";
 
     if (isPlayingRecording) {
       listDisplay += " todo-list-playing-recording";
@@ -33,11 +33,13 @@ class TodoList extends PureComponent {
     return (
       <div className={listDisplay}>
         <CreateTodo onCreateTodo={onCreateTodo} />
-        {todos.length > 0 ? (
-          this.renderTodos()
-        ) : (
-          <div className="empty-todo-list">All todos completed!</div>
-        )}
+        <div className="list-items">
+          {todos.length > 0 ? (
+            this.renderTodos()
+          ) : (
+            <div className="empty-todo-list">All todos completed!</div>
+          )}
+        </div>
       </div>
     );
   }
