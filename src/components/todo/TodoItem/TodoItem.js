@@ -1,8 +1,8 @@
 import React from "react";
 import "./TodoItem.css";
-import CheckCircle from "./CheckCircle/CheckCircle";
-import TodoInput from "./TodoInput/TodoInput";
-import RemoveTodoButton from "./RemoveTodoButton/RemoveTodoButton";
+import CheckCircle from "../CheckCircle/CheckCircle";
+import TodoInput from "../TodoInput/TodoInput";
+import RemoveTodoButton from "../RemoveTodoButton/RemoveTodoButton";
 
 const TodoItem = props => {
   const { todo, onToggleTodoCheck, onRemoveTodo, onEditTodo } = props;
