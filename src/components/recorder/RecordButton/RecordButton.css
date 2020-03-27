@@ -3,13 +3,13 @@
   border: none;
   transition: 0.2s;
   background-color: #d0021b;
-  margin: 2px;
+  margin: 3px;
   width: 26px;
   height: 26px;
   border-radius: 50%;
 }
 .record-icon:hover {
-  color: red;
+  background-color: red;
 }
 .record-icon-is-recording {
   animation: shadow-pulse 1s infinite;

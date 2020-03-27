@@ -9,6 +9,14 @@ class CreateTodo extends React.Component {
     this.state = {
       inputValue: ""
     };
+
+    this.inputRef = null;
+  }
+
+  componentDidMount() {
+    if (this.inputRef) {
+      this.inputRef.focus();
+    }
   }
 
   updateInputValue = e => {
@@ -30,6 +38,8 @@ class CreateTodo extends React.Component {
 
       this.setState({ inputValue: "" });
     }
+
+    this.inputRef.focus();
   };
 
   render() {
@@ -43,6 +53,9 @@ class CreateTodo extends React.Component {
           <IoMdAdd className="create-icon" size={30} />
         </button>
         <input
+          ref={ref => {
+            this.inputRef = ref;
+          }}
           value={this.state.inputValue}
           type="search"
           className="create-todo-input"
