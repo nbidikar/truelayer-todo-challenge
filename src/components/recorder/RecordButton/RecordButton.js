@@ -6,6 +6,7 @@ const RecordButton = props => {
 
   return (
     <button
+      data-testid="record-btn"
       className={"record-icon " + (isRecording && "record-icon-is-recording")}
       onClick={isRecording ? stopRecording : startRecording}
     />

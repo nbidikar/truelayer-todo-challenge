@@ -5,7 +5,11 @@ import { TiDeleteOutline } from "react-icons/ti";
 
 const ClearRecordingButton = props => {
   return (
-    <button className="clear-recording-button" onClick={props.clearRecording}>
+    <button
+      data-testid="clear-recording-btn"
+      className="clear-recording-button"
+      onClick={props.clearRecording}
+    >
       <TiDeleteOutline size={26} color="gray" />
     </button>
   );

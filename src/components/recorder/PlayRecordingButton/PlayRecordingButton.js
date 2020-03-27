@@ -6,6 +6,7 @@ import { FaPlay } from "react-icons/fa";
 const PlayerRecordingButton = props => {
   return (
     <button
+      data-testid="play-recording-btn"
       className="play-button"
       onClick={props.playRecording}
       disabled={props.disabled}
