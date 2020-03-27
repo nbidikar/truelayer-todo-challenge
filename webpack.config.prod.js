@@ -23,6 +23,7 @@ module.exports = merge(baseConfig, {
     }),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
+      favicon: "./src/assets/favicon.ico",
       minify: {
         removeAttributeQuotes: true,
         collapseWhitespace: true,
