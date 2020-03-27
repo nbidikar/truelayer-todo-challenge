@@ -2,6 +2,7 @@ const path = require("path");
 const baseConfig = require("./webpack.config.base");
 const merge = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
@@ -16,6 +17,7 @@ module.exports = merge(baseConfig, {
     minimizer: [new OptimizeCssAssetsPlugin(), new TerserPlugin()]
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       fileName: "[name].[contentHash].css"
     }),
