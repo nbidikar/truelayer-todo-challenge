@@ -79,7 +79,7 @@ const recorder = (state = initialState, action) => {
       return {
         ...state,
         recording: [],
-        recordingTimestamp: null
+        recordingTimestamp: ""
       };
     }
     case types.RECORDER.PLAY_RECORDING: {
