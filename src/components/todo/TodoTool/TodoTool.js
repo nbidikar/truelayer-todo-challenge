@@ -16,7 +16,7 @@ const TodoTool = props => {
 
   return (
     <div className="todo-container">
-      <div className="todo-list-header">TrueLayer To-Do Challenge</div>
+      <div className="todo-list-header">TrueLayer To-Do List Challenge</div>
       <RecorderToolContainer />
       <TodoList
         todos={todos}
