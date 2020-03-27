@@ -7,6 +7,7 @@ const CheckCircle = props => {
 
   return (
     <div
+      data-testid="check-circle"
       className={"check-circle " + (isChecked ? "checked" : "unchecked")}
       onClick={onToggle}
     >

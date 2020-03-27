@@ -6,7 +6,11 @@ const RemoveTodoButton = props => {
   const { onRemove } = props;
 
   return (
-    <div className="action-button" onClick={onRemove}>
+    <div
+      data-testid="remove-todo-button"
+      className="action-button"
+      onClick={onRemove}
+    >
       <IoMdClose className="remove-action" />
     </div>
   );

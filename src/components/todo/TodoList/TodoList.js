@@ -11,9 +11,9 @@ class TodoList extends PureComponent {
       <TodoItem
         key={todo.id}
         todo={todo}
-        onToggleTodoCheck={() => onToggleTodoCheck(todo.id)}
-        onRemoveTodo={() => onRemove(todo.id)}
-        onEditTodo={description => onEdit(todo.id, description)}
+        onToggleTodoCheck={onToggleTodoCheck}
+        onRemoveTodo={onRemove}
+        onEditTodo={onEdit}
       />
     ));
   }
