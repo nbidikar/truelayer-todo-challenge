@@ -8,12 +8,10 @@ Implemented a simple todo app with possibility to record user actions and play t
 
 ## Scripts
 
-To build both development and production bundles, run
+To build both development and production bundles, run:
 
 ### npm run build
 
-which are built to **build/**
-
-To run tests
+To run tests:
 
 ### npm test
